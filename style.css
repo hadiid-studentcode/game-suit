@@ -35,12 +35,12 @@ body {
  font-size: 22px;
 }
 
-option{
-  display: inline;
+#opsi{
+  display: inline-block;
   font-size: 50px;
 }
 
-option:hover{
+#opsi:hover{
   cursor: pointer;
 }
 

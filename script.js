@@ -1,7 +1,7 @@
 class Main {
   constructor() {
-    this.playerName = "kamu";
-    this.botName = "bot";
+    this.playerName = "KAMU";
+    this.botName = "KOMPUTER";
     this.playerOption;
     this.botOption;
     this.winner = "";
@@ -57,27 +57,30 @@ class Main {
   }
 }
 
+function mulaiGame() {
+  const btnmulai = document.getElementById("btnmulai");
+  const opsi = document.getElementById("opsi");
+  btnmulai.style.display = "none";
+  opsi.style.display = "block";
+}
+
 function Optionplayer(params) {
   const main = new Main();
   main.setPlayerOption = params;
   main.setBotOption = main.botBrain();
   main.wincalculation();
 
-   
   const result = document.getElementById("result");
   const player = document.getElementById("player");
   const komputer = document.getElementById("komputer");
-
 
   player.textContent = "Player : ";
   komputer.textContent = "Komputer : ";
   result.textContent = "....";
 
   setTimeout(() => {
- 
-
-    player.textContent = "Player :"+ main.getPlayerOption;
-     komputer.textContent = "Komputer :"+ main.botOption;
+    player.textContent = "Player :" + main.getPlayerOption;
+    komputer.textContent = "Komputer :" + main.botOption;
 
     result.textContent = main.matchResult();
   }, 1500);
