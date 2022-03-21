@@ -55,17 +55,22 @@ class Main {
       return `WAAA ${this.winner}, GAK ADA YG MENANG 🤪`;
     }
   }
+
+  set setNamaPemain(nama) {
+    this.playerName = nama;
+  }
+
+  get getNamaPemain() {
+    return this.playerName;
+  }
 }
 
-function mulaiGame() {
-  const btnmulai = document.getElementById("btnmulai");
-  const opsi = document.getElementById("opsi");
-  btnmulai.style.display = "none";
-  opsi.style.display = "block";
-}
+var namakamu = prompt("SEBELUM BERMAIN MASUKKAN NAMA DULU Y");
+
 
 function Optionplayer(params) {
-  const main = new Main();
+  let main = new Main();
+  main.setNamaPemain = namakamu;
   main.setPlayerOption = params;
   main.setBotOption = main.botBrain();
   main.wincalculation();
@@ -74,13 +79,13 @@ function Optionplayer(params) {
   const player = document.getElementById("player");
   const komputer = document.getElementById("komputer");
 
-  player.textContent = "Player : ";
+  player.textContent = main.getNamaPemain +" : ";
   komputer.textContent = "Komputer : ";
   result.textContent = "....";
 
   setTimeout(() => {
-    player.textContent = "Player :" + main.getPlayerOption;
-    komputer.textContent = "Komputer :" + main.botOption;
+    player.textContent = main.getNamaPemain+ " : " + main.getPlayerOption;
+    komputer.textContent = "Komputer : " + main.botOption;
 
     result.textContent = main.matchResult();
   }, 1500);
